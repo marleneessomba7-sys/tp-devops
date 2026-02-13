@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vérification titre HTML
+        run: grep "<title>Eval DevOps</title>" index.html
